@@ -1,5 +1,5 @@
 const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../config/db"); // adjust path if needed
+const sequelize = require("../config/db");
 
 class Product extends Model {}
 
@@ -18,15 +18,15 @@ Product.init(
             allowNull: false,
         },
         image: {
-            type: DataTypes.TEXT, // base64 string or URL
+            type: DataTypes.TEXT,
             allowNull: true,
         },
     },
     {
-        sequelize,           // ✅ Pass the Sequelize instance
+        sequelize,
         modelName: "Product",
         tableName: "Products",
-        timestamps: true,    // adds createdAt + updatedAt
+        timestamps: true,
     }
 );
 
